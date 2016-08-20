@@ -1,6 +1,9 @@
 ### Prismic ###
 prismic-configuration.js
 
+### Compiled Assets ###
+**/compiled/
+
 ### macOS ###
 *.DS_Store
 .AppleDouble
