@@ -1,7 +1,10 @@
+import scrollx, { Color } from 'scrollx'
+
 document.addEventListener('DOMContentLoaded', init)
 
 function init() {
   sourceCodeTabs()
+  animate()
 }
 
 function sourceCodeTabs() {
@@ -26,4 +29,9 @@ function sourceCodeTabs() {
     })
 
   })
+}
+
+function animate() {
+  const animationNode = document.querySelector('#doc-animation')
+  scrollx(animationNode, window.scenario)
 }

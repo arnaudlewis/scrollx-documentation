@@ -8,7 +8,13 @@ export default {
       .then((api) => {
         api.getByUID("documentation", "documentation")
           .then((doc) => {
-            res.render('index', {'doc': doc})
+            const scenes = doc.examples.slices.reduce((acc, s) => {
+              return s.sliceType === 'example' ? `${acc ? acc + ',' : ''}${s.value.docs[0].animation}` : ''
+            }, null)
+            const scenario = `[${scenes}]`
+            console.log(scenario)
+
+            res.render('index', {'doc': doc, scenario: scenario})
           })
           .catch((err) => res.redirect(Router.notFound))
         })

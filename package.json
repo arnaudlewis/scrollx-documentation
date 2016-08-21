@@ -6,16 +6,13 @@
     "start": "npm run build-sass; npm run build-node; npm run build-js; node dist/app.js",
     "watch": "npm run watch-sass | npm run watch-node | npm run watch-js",
     "serve": "node dist/app.js",
-
     "build-node": "babel ./app/ -d dist",
     "watch-node": "babel-watch app/app.js -w ./app/",
-
     "pre-build-js": "mkdir -p public/javascripts/compiled",
     "build-js": "npm run pre-build-js; browserify -t [babelify] ./assets/javascripts/client.js -d > ./public/javascripts/compiled/client.js",
     "watch-js": "npm run pre-build-js; watchify -t [babelify] ./assets/javascripts/client.js -o ./public/javascripts/compiled/client.js",
-
     "pre-build-sass": "mkdir -p public/stylesheets/compiled",
-    "sass" : "node-sass --include-path scss assets/stylesheets/main.sass public/stylesheets/compiled/scrollx.css",
+    "sass": "node-sass --include-path scss assets/stylesheets/main.sass public/stylesheets/compiled/scrollx.css",
     "build-sass": "npm run pre-build-sass; npm run sass",
     "watch-sass": "npm run pre-build-sass; nodemon -e sass -x \"npm run sass\""
   },
@@ -28,6 +25,7 @@
     "method-override": "~2.1.1",
     "morgan": "~1.0.0",
     "pug": "^2.0.0-alpha6",
+    "scrollx": "^1.0.3",
     "serve-favicon": "~2.3.0"
   },
   "repository": {
