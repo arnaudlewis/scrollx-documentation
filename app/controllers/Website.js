@@ -12,8 +12,6 @@ export default {
               return s.sliceType === 'example' ? `${acc ? acc + ',' : ''}${s.value.docs[0].animation}` : ''
             }, null)
             const scenario = `[${scenes}]`
-            console.log(scenario)
-
             res.render('index', {'doc': doc, scenario: scenario})
           })
           .catch((err) => res.redirect(Router.notFound))

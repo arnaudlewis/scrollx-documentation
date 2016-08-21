@@ -20,16 +20,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   index: function index(req, res) {
-    res.render('index');
-    // Prismic.api(req, res)
-    //   .then((api) => {
-    //     api.getByUID("demo", "demo-page")
-    //       .then((doc) => {
-    //         res.render('index', {'doc': doc})
-    //       })
-    //       .catch((err) => res.redirect(Router.notFound))
-    //     })
-    //   .catch((err) => Error.handle(err, req, res))
+    _Prismic2.default.api(req, res).then(function (api) {
+      api.getByUID("documentation", "documentation").then(function (doc) {
+        var scenes = doc.examples.slices.reduce(function (acc, s) {
+          return s.sliceType === 'example' ? '' + (acc ? acc + ',' : '') + s.value.docs[0].animation : '';
+        }, null);
+        var scenario = '[' + scenes + ']';
+        res.render('index', { 'doc': doc, scenario: scenario });
+      }).catch(function (err) {
+        return res.redirect(_Router2.default.notFound);
+      });
+    }).catch(function (err) {
+      return _Error2.default.handle(err, req, res);
+    });
   },
   page: function page(req, res) {
     _Prismic2.default.api(req, res).then(function (api) {
