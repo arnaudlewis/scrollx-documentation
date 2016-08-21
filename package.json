@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "start": "babel ./app/ -d dist; node dist/app.js",
-    "watch": "babel-watch app/app.js -w ./app/",
+    "start": "npm run build-sass; npm run build-js; node dist/app.js",
+    "watch": "npm run watch-sass | npm run watch-js;",
+    "build-js": "babel ./app/ -d dist",
+    "watch-js": "babel-watch app/app.js -w ./app/",
     "sass" : "node-sass --include-path scss assets/stylesheets/main.sass public/stylesheets/compiled/scrollx.css",
     "build-sass": "npm run pre-build; npm run sass",
     "watch-sass": "npm run pre-build; nodemon -e sass -x \"npm run sass\"",
     "pre-build": "mkdir -p public/stylesheets/compiled",
-    "build": "babel ./app/ -d dist",
     "serve": "node dist/app.js"
   },
   "dependencies": {
