@@ -1,6 +1,16 @@
 extends ./layout.pug
 
 block body
-  div.content
-    section
-      h1 Scrollx :D
+  section.documentation
+
+    header
+      h1 !{doc.title.asHtml()}
+      != doc.summary.asHtml()
+
+    article
+      each slice in doc.examples.slices
+        case slice.sliceType
+          when 'example'
+            h2 !{slice.value.docs[0].title}
+            != slice.value.docs[0].summary.asHtml()
+            include partials/source-code

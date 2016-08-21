@@ -1,0 +1,21 @@
+.doc-source-code
+  .code-wrapper
+    .code-header
+      ul
+        li(class="tab active") HTML
+        li(class="tab") CSS
+        li(class="tab") JS
+        li(class="tab") JSON
+
+    pre(class="active")
+      code
+        != slice.value.docs[0].html.asHtml()
+    pre
+      code
+        != slice.value.docs[0].css.asHtml()
+    pre
+      code
+        != slice.value.docs[0].js.asHtml()
+    pre
+      code
+        != slice.value.docs[0].json.asHtml()

@@ -8,10 +8,14 @@ head
 
     // Required for Previews and Experiments
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="./javascripts/vendors/highlight.min.js")
+    script(src="./javascripts/compiled/client.js")
     script
       = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
     script(src="//static.cdn.prismic.io/prismic.min.js")
     script.
       window.Router = !{JSON.stringify(Router)}
 body
+    aside
+        span MON MENU
     block body

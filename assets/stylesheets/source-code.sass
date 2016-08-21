@@ -10,12 +10,44 @@
 
   .code-wrapper
     width: 100%
-    code
+    box-shadow: 0px 2px 44px 0px rgba(0,0,0, 0.15)
+    margin: 40px 0
+    .code-header
+      height: 40px
+      text-align: right
+      padding: 5px 10px
       box-sizing: border-box
-      width: 100%
-      padding: 0 1rem
-      line-height: 1.4rem
 
+      ul
+        width: 100%
+        padding: 0
+        margin: 0
+        list-style: none
+        height: 100%
+        padding: 0.5rem 0
+        text-align: left
+
+        li
+          display: inline-block
+          width: 50px
+          text-align: center
+          vertical-align: middle
+          font-size: 0.8rem
+          color: #9a9a9a
+          cursor: pointer
+          &.active
+            color: #212121
+
+    & > pre
+      margin: 0
+      display: none
+      &.active
+        display: block
+      code
+        box-sizing: border-box
+        width: 100%
+        padding: 1.5rem
+        line-height: 1.4rem
 
 .doc-source-code
   .hljs
@@ -28,60 +60,63 @@
     line-height: 24px
     color: #9593DA
 
-  .hljs-comment,
-  .hljs-quote
-    color: #93a1a1
+  /* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote
+  color: #7285b7
 
-  /* Solarized Green */
-  .hljs-keyword,
-  .hljs-selector-tag,
-  .hljs-literal,
-  .hljs-addition
-    color: #FFFFFF
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion
+  color: #ff9da4
 
-  /* Solarized Cyan */
-  .hljs-number,
-  .hljs-string,
-  .hljs-doctag,
-  .hljs-regexp
-    color: #9593DA
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link
+  color: #ffc58f
 
-  /* Solarized Blue */
-  .hljs-title,
-  .hljs-section,
-  .hljs-built_in,
-  .hljs-name,
-  .hljs-selector-id,
-  .hljs-selector-class
-    color: #268bd2
+/* Tomorrow Yellow */
+.hljs-attribute
+  color: #ffeead
 
-  /* Solarized Yellow */
-  .hljs-attribute,
-  .hljs-attr,
-  .hljs-variable,
-  .hljs-template-variable,
-  .hljs-class .hljs-title,
-  .hljs-type
-    color: #C2AA5F
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition
+  color: #d1f1a9
 
-  /* Solarized Orange */
-  .hljs-symbol,
-  .hljs-bullet,
-  .hljs-subst,
-  .hljs-meta .hljs-keyword,
-  .hljs-selector-attr,
-  .hljs-link
-    color: #cb4b16
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section
+  color: #bbdaff
 
-  /* Solarized Red */
-  .hljs-deletion
-    color: #dc322f
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag
+  color: #ebbbff
 
-  .hljs-formula
-    background: #eee8d5
+.hljs
+  display: block
+  overflow-x: auto
+  background: #002451
+  color: white
+  padding: 0.5em
 
-  .hljs-emphasis
-    font-style: italic
+.hljs-emphasis
+  font-style: italic
 
-  .hljs-strong
-    font-weight: bold
+.hljs-strong
+  font-weight: bold
