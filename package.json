@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "start": "npm run build-sass; npm run build-node; npm run build-js; node dist/app.js",
+    "prestart": "npm run build-sass; npm run build-node; npm run build-js",
+    "start": "node dist/app.js",
     "watch": "npm run watch-sass | npm run watch-node | npm run watch-js",
     "serve": "node dist/app.js",
     "build-node": "babel ./app/ -d dist",
@@ -25,7 +26,7 @@
     "method-override": "~2.1.1",
     "morgan": "~1.0.0",
     "pug": "^2.0.0-alpha6",
-    "scrollx": "^1.0.3",
+    "scrollx": "^1.2.4",
     "serve-favicon": "~2.3.0"
   },
   "repository": {

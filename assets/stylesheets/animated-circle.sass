@@ -1,0 +1,19 @@
+.animated-circle
+  background-color: #FFFFFF
+  width: 75px
+  height: 75px
+  border-radius: 50%
+  margin: 20px auto
+  border: 12px solid #000000
+  position: relative
+
+  &:after
+    content: ''
+    height: 3px
+    background-color: black
+    width: 75px
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+

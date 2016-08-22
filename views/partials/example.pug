@@ -2,8 +2,8 @@ div(class=slice.value.docs[0].animSelector)
   h2 !{slice.value.docs[0].title}
   != slice.value.docs[0].summary.asHtml()
 
-  .animated
-    p Hello World
+  .animation-area
+    include ./animated-circle
 
   .doc-source-code
     .code-wrapper
